@@ -1,2 +1,5 @@
-# GvcciBridge
-A windows bridge for Gvcci that automates palette sampling and setting.
+# WinGvcci
+An automated script for windows to automatically change cmd color, 
+inspired by Fabrice Castel and his amazing gvcci.
+
+https://github.com/FabriceCastel/gvcci
