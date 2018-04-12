@@ -1,7 +1,10 @@
 import colorgram, os
-from xml.dom import minidom
+import xml.etree.ElementTree as ET
 
-mydoc = minidom.parse('schemes\WinGvcci.itermcolors')
+counter = 1
+
+WinGvcciXml = ET.parse('schemes\WinGvcci.itermcolors')  
+root = WinGvcciXml.getroot()
 
 App = os.getenv('AppData')
 TranscodedPaper = (App + "\Microsoft\Windows\Themes\TranscodedWallpaper")
@@ -50,7 +53,52 @@ red7 = float(rgb7.r)/255
 green7 = float(rgb7.g)/255
 blue7 = float(rgb7.b)/255
 
+for elem in root.iter('real'):  
+    if(counter == 49):
+        elem.text = str(red1)
+    if(counter == 50):
+        elem.text = str(green1)
+    if(counter == 51):
+        elem.text = str(blue1)
+    if(counter == 52):
+        elem.text = str(red2)
+    if(counter == 53):
+        elem.text = str(green2)
+    if(counter == 54):
+        elem.text = str(blue2)
+    if(counter == 55):
+        elem.text = str(red3)
+    if(counter == 56):
+        elem.text = str(green3)
+    if(counter == 57):
+        elem.text = str(blue3)
+    if(counter == 58):
+        elem.text = str(red4)
+    if(counter == 59):
+        elem.text = str(green4)
+    if(counter == 60):
+        elem.text = str(blue4)
+    if(counter == 61):
+        elem.text = str(red5)
+    if(counter == 62):
+        elem.text = str(green5)
+    if(counter == 63):
+        elem.text = str(blue5)
+    if(counter == 64):
+        elem.text = str(red6)
+    if(counter == 65):
+        elem.text = str(green6)
+    if(counter == 66):
+        elem.text = str(blue6)
+    if(counter == 67):
+        elem.text = str(red7)
+    if(counter == 68):
+        elem.text = str(green7)
+    if(counter == 69):
+        elem.text = str(blue7)
+    
+    counter += 1
 
+WinGvcciXml.write('schemes/WinGvcci.itermcolors')
 
-
-
+os.system("colortool -q -b WinGvcci")
