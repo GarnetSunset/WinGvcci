@@ -1,6 +1,28 @@
-import colorgram, os
+import colorgram, os, shutil, zipfile
 import xml.etree.ElementTree as ET
+from PIL import Image
+from resizeimage import resizeimage
+from urllib.request import urlopen
 
+counter = 1
+owd = os.getcwd()
+
+if not os.path.exists("Wallpapers"):
+    os.makedirs("Wallpapers")
+
+if not os.path.isfile('colortool.exe'):
+    os.rename("schemes","schemestemp")
+    chromeDL = urlopen("https://github.com/Microsoft/console/releases/download/1708.14008/colortool.zip")
+    with open(os.path.basename("https://github.com/Microsoft/console/releases/download/1708.14008/colortool.zip"), "wb") as local_file:
+                local_file.write(chromeDL.read())
+    zippy = zipfile.ZipFile("colortool.zip","r")
+    zippy.extractall(owd)
+    zippy.close()
+    os.remove("colortool.zip")
+    shutil.rmtree("schemes")
+    os.rename("schemestemp","schemes")
+    
+    
 counter = 1
 
 WinGvcciXml = ET.parse('schemes\WinGvcci.itermcolors')  
@@ -8,8 +30,13 @@ root = WinGvcciXml.getroot()
 
 App = os.getenv('AppData')
 TranscodedPaper = (App + "\Microsoft\Windows\Themes\TranscodedWallpaper")
+shutil.copyfile(TranscodedPaper, "Wallpapers/TranscodedPaper.jpg")
+with open("Wallpapers/TranscodedPaper.jpg", 'r+b') as f:
+    with Image.open(f) as image:
+        cover = resizeimage.resize_cover(image, [1200, 600])
+        cover.save('Wallpapers/TranscodedPaperConvert.jpg', image.format)
 
-colors = colorgram.extract(TranscodedPaper, 7)
+colors = colorgram.extract('Wallpapers/TranscodedPaperConvert.jpg', 7)
 
 first_color = colors[0]
 rgb1  = first_color.rgb
@@ -54,7 +81,6 @@ green7 = float(rgb7.g)/255
 blue7 = float(rgb7.b)/255
 
 for elem in root.iter('real'):
-    print(rgb2)
     if(counter == 3):
         elem.text = str(red1)
     if(counter == 2):
@@ -73,6 +99,30 @@ for elem in root.iter('real'):
         elem.text = str(green3)
     if(counter == 7):
         elem.text = str(blue3)
+    if(counter == 10):
+        elem.text = str(blue4)
+    if(counter == 11):
+        elem.text = str(green4)
+    if(counter == 12):
+        elem.text = str(red4)
+    if(counter == 13):
+        elem.text = str(blue5)
+    if(counter == 14):
+        elem.text = str(green5)
+    if(counter == 15):
+        elem.text = str(red5)
+    if(counter == 16):
+        elem.text = str(blue6)
+    if(counter == 17):
+        elem.text = str(green6)
+    if(counter == 18):
+        elem.text = str(red6)
+    if(counter == 19):
+        elem.text = str(blue7)
+    if(counter == 20):
+        elem.text = str(green7)
+    if(counter == 21):
+        elem.text = str(red7)
     
     counter += 1
 
