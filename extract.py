@@ -123,6 +123,54 @@ for elem in root.iter('real'):
         elem.text = str(green7)
     if(counter == 21):
         elem.text = str(red7)
+    if(counter == 22):
+        elem.text = str(blue6)
+    if(counter == 23):
+        elem.text = str(green6)
+    if(counter == 24):
+        elem.text = str(red6)
+    if(counter == 27):
+        elem.text = str(red3)
+    if(counter == 26):
+        elem.text = str(green3)
+    if(counter == 25):
+        elem.text = str(blue3)
+    if(counter == 28):
+        elem.text = str(blue4)
+    if(counter == 29):
+        elem.text = str(green4)
+    if(counter == 30):
+        elem.text = str(red4)
+    if(counter == 31):
+        elem.text = str(blue5)
+    if(counter == 32):
+        elem.text = str(green5)
+    if(counter == 33):
+        elem.text = str(red5)
+    if(counter == 34):
+        elem.text = str(blue6)
+    if(counter == 35):
+        elem.text = str(green6)
+    if(counter == 36):
+        elem.text = str(red6)
+    if(counter == 37):
+        elem.text = str(blue4)
+    if(counter == 38):
+        elem.text = str(green4)
+    if(counter == 39):
+        elem.text = str(red4)
+    if(counter == 40):
+        elem.text = str(blue7)
+    if(counter == 41):
+        elem.text = str(green7)
+    if(counter == 42):
+        elem.text = str(red7)
+    if(counter == 62):
+        elem.text = str(blue7)
+    if(counter == 63):
+        elem.text = str(green7)
+    if(counter == 64):
+        elem.text = str(red7)
     
     counter += 1
 
