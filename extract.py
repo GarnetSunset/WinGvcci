@@ -29,7 +29,10 @@ WinGvcciXml = ET.parse('schemes\WinGvcci.itermcolors')
 root = WinGvcciXml.getroot()
 
 App = os.getenv('AppData')
-TranscodedPaper = (App + "\Microsoft\Windows\Themes\TranscodedWallpaper")
+if os.path.isfile(App + "\Microsoft\Windows\Themes\Transcoded_001"):
+    TranscodedPaper = (App + "\Microsoft\Windows\Themes\Transcoded_001")
+else:
+    TranscodedPaper = (App + "\Microsoft\Windows\Themes\TranscodedWallpaper")
 shutil.copyfile(TranscodedPaper, "Wallpapers/TranscodedPaper.jpg")
 with open("Wallpapers/TranscodedPaper.jpg", 'r+b') as f:
     with Image.open(f) as image:
