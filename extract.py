@@ -2,7 +2,7 @@ import colorgram, os, shutil, zipfile
 import xml.etree.ElementTree as ET
 from PIL import Image
 from resizeimage import resizeimage
-from urllib.request import urlopen
+from six.moves.urllib.request import urlopen
 
 counter = 1
 owd = os.getcwd()
