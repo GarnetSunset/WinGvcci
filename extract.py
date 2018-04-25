@@ -22,9 +22,6 @@ if not os.path.isfile('colortool.exe'):
     shutil.rmtree("schemes")
     os.rename("schemestemp","schemes")
     
-    
-counter = 1
-
 WinGvcciXml = ET.parse('schemes\WinGvcci.itermcolors')  
 root = WinGvcciXml.getroot()
 
