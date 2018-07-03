@@ -1,3 +1,4 @@
+![WinGvcci](https://raw.githubusercontent.com/GarnetSunset/WinGvcci/master/logo.png)
 # WinGvcci
 An automated script for windows to change cmd color palette, 
 inspired by Fabrice Castel and his amazing gvcci.
@@ -9,6 +10,8 @@ https://github.com/FabriceCastel/gvcci
 ## Credits
 
 Fabrice Castel for a dope idea.
+
+Icon by github: @jaames /twitter: @rakujira
 
 Wallpaper in example by Kuvshinov Ilya
 
