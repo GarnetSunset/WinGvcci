@@ -1,2 +1,1 @@
 colorgram.py
-python-resize-image
