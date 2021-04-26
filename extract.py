@@ -19,18 +19,6 @@ counter = 1
 
 if not os.path.exists("Wallpapers"):
     os.makedirs("Wallpapers")
-
-if not os.path.isfile('colortool.exe'):
-    os.rename("schemes","schemestemp")
-    chromeDL = urlopen("https://github.com/Microsoft/console/releases/download/1708.14008/colortool.zip")
-    with open(os.path.basename("https://github.com/Microsoft/console/releases/download/1708.14008/colortool.zip"), "wb") as local_file:
-                local_file.write(chromeDL.read())
-    zippy = zipfile.ZipFile("colortool.zip","r")
-    zippy.extractall(owd)
-    zippy.close()
-    os.remove("colortool.zip")
-    shutil.rmtree("schemes")
-    os.rename("schemestemp","schemes")
     
 WinGvcciXml = ET.parse('schemes\WinGvcci.itermcolors')  
 root = WinGvcciXml.getroot()
