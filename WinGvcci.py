@@ -1,8 +1,11 @@
 import colorgram, os, shutil, zipfile
 import xml.etree.ElementTree as ET
 from PIL import Image
+from PIL import ImageFile
 import winreg
 import xmltodict
+
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 def get_reg(name):
     try:
