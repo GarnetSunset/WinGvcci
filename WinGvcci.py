@@ -62,6 +62,9 @@ for elem in root.iter('real'):
     elem.text = fullList[countColor]
     countColor += 1
     totalCount += 1
+    if totalCount == 0 or totalCount == 1 or totalCount == 2:
+        newNum = 1.0 - float(fullList[countColor])
+        elem.text = str(newNum)
     if countColor == 7:
         countColor = 0
 
